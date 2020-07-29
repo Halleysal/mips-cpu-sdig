@@ -1,0 +1,30 @@
+`timescale 1ns/10ps
+
+module alu_TB();
+
+reg [31:0] a, b;
+reg [1:0] s;
+wire [31:0] out;
+
+ALU DUT(
+.a(a),
+.b(b),
+.s(s),
+.out(out)
+);a
+
+initial begin
+a = 1000;
+b = 2000;
+s = 1;
+#30 s = 0;
+#20 a = 4;
+#5 b = 5;
+#5 sel = 2;
+#10 sel = 3;
+end
+
+initial
+	 #100 $stop;
+
+endmodule

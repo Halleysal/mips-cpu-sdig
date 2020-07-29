@@ -1,0 +1,30 @@
+`timescale 1ns/10ps
+
+module Register_TB;
+reg clk;
+reg [31:0] in;
+wire [31:0] out;
+
+register32bits DUT(
+.clk(clk),
+.in(in),
+.out(out)
+);
+
+initial begin
+	clock = 0;
+	entrada = 0;
+end
+
+always begin
+	$display("Saída=%d", out);
+	#10 clock = ~clock;
+	entrada = entrada + 10;
+end
+
+
+
+initial
+	#700 $stop;
+
+endmodule

@@ -1,0 +1,18 @@
+Fitter Status : Successful - Tue Jul 14 20:21:14 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Counter
+Top-level Entity Name : Counter
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 11 / 49,760 ( < 1 % )
+    Total combinational functions : 11 / 49,760 ( < 1 % )
+    Dedicated logic registers : 7 / 49,760 ( < 1 % )
+Total registers : 7
+Total pins : 3 / 360 ( < 1 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )

@@ -1,0 +1,61 @@
+module cpu(
+	clock, 
+	reset,
+	systemClock,
+	multiplierClock,
+	lockedPLL,
+	we,
+	cs,
+	ADDR, 
+	Data_BUS_WRITE,
+	Data_BUS_READ
+);
+
+input clock, reset;
+
+output systemClock, multiplierClock,lockedPLL, we, cs,
+output reg [15:0] ADDR,
+output reg [31:0] Data_BUS_WRITE, Data_BUS_READ,
+
+wire wSystemClk;
+wire wMultiplierClk;
+wire wPLL;
+wire [9:0] pCounter;
+wire [31:0] instruction;
+wire [31:0] control;
+wire ctrl_muxA;
+wire ctrl_muxR;
+wire ctrl_muxM;
+wire [1:0] ctrl_ALU;
+wire [4:0] rs;
+wire [4:0] rt;
+wire [4:0] rd;
+wire [31:0] write_back;
+wire [31:0] wA;
+wire [31:0] wB;
+wire [31:0] wIMM;
+
+PLL PLL1(
+	.areset (rst),
+	.inclk0 (clock),
+	.c0 (wSystemClock),
+	.c1 (wMultiplierClk),
+	locked (wPLL)
+);
+
+pc ProgramCouter(wSystemClk, reset, pCouter);
+intructionmemory IntructionMemory(wSystemClock, pCounter, instruction);
+
+control Control(wSystemClk, instruction, cs, wr, ctrl_muxA, ctrl_muxR, ctrl_muxM, ctrl_ALU, rs, rt, rd);
+registerfile RegisterFile(wSystemClk, reset, write_back, rs, rt, rd, wA, wB);
+extend Extend(instruction[15:0], wIMM);
+register IMM(wSystemClk, wIMM, outIMM);
+register CTRL1(wSystemClk, )
+
+
+
+
+
+
+
+

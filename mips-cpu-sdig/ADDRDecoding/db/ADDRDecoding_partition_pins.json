@@ -1,0 +1,77 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "muxC",
+					"strict" : false
+				},
+				{
+					"name" : "adress[14]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[15]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[9]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[8]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[4]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[1]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[2]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[5]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[6]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[7]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[12]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[13]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[10]",
+					"strict" : false
+				},
+				{
+					"name" : "adress[11]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

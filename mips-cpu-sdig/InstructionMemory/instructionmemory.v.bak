@@ -1,0 +1,18 @@
+module instructionmemory(
+    input clk,
+    input[9:0] pc,
+    output reg[31:0] instruction
+);
+
+reg [31:0] instructionMemory [0:1023];
+
+initial begin
+
+    //instruções
+	 
+end
+
+always @ (posedge clk) 
+    instruction = instructionMemory[pc];
+
+endmodule

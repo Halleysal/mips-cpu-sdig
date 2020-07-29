@@ -1,0 +1,57 @@
+module control(
+	input clk,
+	input [31:0] inst,
+	output reg cs, wr, ctrl_muxA, ctrl_muxR,
+	output reg [2:0] alu,
+	output reg [4:0] rs, rt, rd
+);
+	
+	reg [5:0] op, funct;
+	reg [4:0] rd;
+	
+	always @(inst) begin
+		
+		op = inst[31:26]
+		rs = inst[25:21]
+		rt = inst[20:16]
+		funct = inst[5:0];
+		
+		if(op == 18) begin	//Add, sub, mul, and e or 
+			case(funct)
+				6'd32: alu = 3'b000;
+				6'd34: alu = 3'b001;
+				6'd50: alu = 3'b010;
+				6'd36: alu = 3'b011;
+				6'd37: alu = 3'b100;
+			endcase	
+		ctrl_muxA = 0;
+		ctrl_muxR = 0;
+		rd = inst[15:11];
+		end
+		
+		if(op == 19) begin	//lw
+			alu = 0;
+			ctrl_muxA = 1;
+			ctrl_muxR = 1;
+			cs = 1;
+			wr = 0; 
+			rd = rt; 
+		end
+		
+		if(op == 20) begin	//sw
+			alu = 0;
+			ctrl_muxA = 1;
+			ctrl_muxR = 1;
+			cs = 1;
+			wr = 1; 
+			rd = rt; 
+		end
+		
+	end
+	
+	assign aux = {}
+	
+endmodule
+		
+		
+				

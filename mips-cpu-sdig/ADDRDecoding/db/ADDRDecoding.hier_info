@@ -1,0 +1,36 @@
+|ADDRDecoding
+adress[0] => LessThan0.IN32
+adress[0] => LessThan1.IN32
+adress[1] => LessThan0.IN31
+adress[1] => LessThan1.IN31
+adress[2] => LessThan0.IN30
+adress[2] => LessThan1.IN30
+adress[3] => LessThan0.IN29
+adress[3] => LessThan1.IN29
+adress[4] => LessThan0.IN28
+adress[4] => LessThan1.IN28
+adress[5] => LessThan0.IN27
+adress[5] => LessThan1.IN27
+adress[6] => LessThan0.IN26
+adress[6] => LessThan1.IN26
+adress[7] => LessThan0.IN25
+adress[7] => LessThan1.IN25
+adress[8] => LessThan0.IN24
+adress[8] => LessThan1.IN24
+adress[9] => LessThan0.IN23
+adress[9] => LessThan1.IN23
+adress[10] => LessThan0.IN22
+adress[10] => LessThan1.IN22
+adress[11] => LessThan0.IN21
+adress[11] => LessThan1.IN21
+adress[12] => LessThan0.IN20
+adress[12] => LessThan1.IN20
+adress[13] => LessThan0.IN19
+adress[13] => LessThan1.IN19
+adress[14] => LessThan0.IN18
+adress[14] => LessThan1.IN18
+adress[15] => LessThan0.IN17
+adress[15] => LessThan1.IN17
+muxC << muxC.DB_MAX_OUTPUT_PORT_TYPE
+
+

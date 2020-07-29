@@ -1,0 +1,321 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_WRITE[31]",
+					"strict" : false
+				},
+				{
+					"name" : "we",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "clockM",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_BUS_READ[31]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

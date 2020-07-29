@@ -1,0 +1,22 @@
+module Acc (Saidas, Entradas, Load, Sh, Ad, Clk);
+output [32:0] Saidas;
+input [32:0]Entradas;
+input Load, Sh, Ad, Clk;
+
+reg [32:0] aux;
+assign Saidas = aux;
+
+always @(posedge Clk) begin
+	
+	if (Load) begin
+		aux <= {17'b00000000000000000, Entradas[15:0]};
+	end
+	if (Ad) begin
+		aux <= {Entradas[32:16],aux[15:0]};
+	end
+	if (Sh) begin 
+		aux <= {1'b0,aux[32:1]};
+	end
+end
+
+endmodule

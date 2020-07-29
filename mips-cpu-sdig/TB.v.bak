@@ -1,0 +1,37 @@
+`timescale 1ns/10ps
+
+module TB;
+reg clock;
+reg reset;
+wire [31:0] Data_BUS_READ;
+wire [31:0] Data_BUS_WRITE;
+wire [15:0] ADDR;
+wire wr, cs;
+
+MIPS_CPU DUT(
+.clock(clock),
+.reset(reset),
+.wr(wr),
+.cs(cs),
+.ADDR(ADDR), 
+.Data_BUS_WRITE(Data_BUS_WRITE),
+.Data_BUS_READ(Data_BUS_READ)
+);
+
+initial begin
+clock = 0;
+reset = 1;
+#10 reset = 0;
+
+#1000 reset = 1;
+#50 reset = 0;
+end
+
+always begin
+ #20 clock = ~clock;
+end
+
+initial 
+	#2200 $stop;
+
+endmodule

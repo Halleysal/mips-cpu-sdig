@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at registerfile.v(19): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/RegisterFile/registerfile.v Line: 19

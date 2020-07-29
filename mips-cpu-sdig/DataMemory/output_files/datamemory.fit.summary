@@ -1,0 +1,18 @@
+Fitter Status : Successful - Sat Jul 18 13:44:05 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : datamemory
+Top-level Entity Name : datamemory
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 39,156 / 49,760 ( 79 % )
+    Total combinational functions : 22,944 / 49,760 ( 46 % )
+    Dedicated logic registers : 32,832 / 49,760 ( 66 % )
+Total registers : 32832
+Total pins : 77 / 360 ( 21 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )

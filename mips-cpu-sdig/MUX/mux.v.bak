@@ -1,0 +1,8 @@
+module mux_2x1(a, b, s, out);
+input [31:0] a, b; // As entradas sao A e B
+input s; // O sinal de selecao é S
+output [31:0] out; // O sinal de saida é X
+
+assign out = (!s) ? a : b;
+ 
+endmodule

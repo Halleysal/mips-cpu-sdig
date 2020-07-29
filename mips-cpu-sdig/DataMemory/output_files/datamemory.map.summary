@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Jul 18 13:29:27 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : datamemory
+Top-level Entity Name : datamemory
+Family : MAX 10
+Total logic elements : 55,715
+    Total combinational functions : 22,943
+    Dedicated logic registers : 32,832
+Total registers : 32832
+Total pins : 77
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

@@ -1,0 +1,28 @@
+`timescale 1ns/10ps 
+
+module control_TB;
+
+reg [31:0] instruction;
+wire [31:0] output_control;
+
+control DUT(
+
+.instruction(instruction),
+.output_control(output_control)
+
+);
+
+initial begin
+
+	instruction = 32'b00000000000000000000000000000000;
+
+	#50 instruction = 32'b00011000000000000000000000000000;
+	#50 instruction = 32'b00011000000000100000000000000001;
+	#50 instruction = 32'b00010100000000010100001010100000;
+	
+	end
+	
+	initial
+	#200 $stop;
+	
+	endmodule

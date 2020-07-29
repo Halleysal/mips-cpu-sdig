@@ -1,0 +1,281 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Saidas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Saidas[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Sh",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Ad",
+					"strict" : false
+				},
+				{
+					"name" : "Load",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Entradas[31]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

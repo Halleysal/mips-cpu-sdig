@@ -1,0 +1,32 @@
+module datamemory
+#(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=16)
+(	
+	input clk, we, cs
+	input [(DATA_WIDTH-1):0] data,	
+	input [(ADDR_WIDTH-1):0] addr,
+	output reg [(DATA_WIDTH-1):0] q
+);
+
+	reg [DATA_WIDTH-1:0] memoria[2**ADDR_WIDTH-1:0];
+
+	initial begin
+	
+		memoria[61440] = 32'b0000_0000_0000_0000_0000_0111_1101_0001; // Salva 2001 (A) na posiçaõ F000h
+		memoria[61441] = 32'b0000_0000_0000_0000_0000_0111_1101_0001; // Salva 4001 (B) na posiçaõ F001h
+		memoria[61442] = 32'b0000_0000_0000_0000_0001_0011_1000_1001; // Salva 5001 (C) na posiçaõ F002h
+		memoria[61443] = 32'b0000_0000_0000_0000_0000_1011_1011_1001; // Salva 3001 (D) na posiçaõ F003h
+		memoria[61444] = 32'b0000_0000_0000_0000_0111_0011_1110_1000; // Salva 29672(Aux) na posiçaõ F004h
+		
+	end 
+
+	always @ (posedge clk) begin
+		if (we && cs) begin
+			memoria[addr] <= data;
+		end 
+		else if(we==0) begin
+			q <= memoria[addr];
+		end
+	end
+
+endmodule
+

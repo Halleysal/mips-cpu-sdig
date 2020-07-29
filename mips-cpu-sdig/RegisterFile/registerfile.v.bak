@@ -1,0 +1,56 @@
+module registerfile(reset, rs, rt, controle, entrada, saidaA, saidaB);
+input reset;
+input [4:0] controle;
+input [4:0] rs, rt;
+input [31:0] entrada;
+output [31:0] saidaA, saidaB;
+
+parameter DATA_WIDTH = 32;
+parameter MEM_WIDTH = 16;
+integer i;
+
+reg[DATA_WIDTH-1:0] mem [0:(MEM_WIDTH-1)];
+
+initial begin
+	for(i = 0; i < 16; i = i + 1)
+		mem[i] = 0;
+end
+
+always@(reset) 
+begin
+	
+end
+
+always@(*)
+begin
+	if(reset) begin
+		for(i = 0; i < 16; i = i + 1)
+			mem[i] = 0;
+	end
+	else begin
+		case(controle)
+		0: mem[0] = entrada;
+		1: mem[1] = entrada;
+		2: mem[2] = entrada;
+		3: mem[3] = entrada;
+		4: mem[4] = entrada;
+		5: mem[5] = entrada;
+		6: mem[6] = entrada;
+		7: mem[7] = entrada;
+		8: mem[8] = entrada;
+		9: mem[9] = entrada;
+		10: mem[10] = entrada;
+		11: mem[11] = entrada;
+		12: mem[12] = entrada;
+		13: mem[13] = entrada;
+		14: mem[14] = entrada;
+		default: mem[15] = entrada;
+		endcase
+	end
+end 
+
+assign saidaA = mem[rs];
+assign saidaB = mem[rt];
+
+endmodule
+

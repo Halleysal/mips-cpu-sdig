@@ -1,0 +1,941 @@
+Analysis & Synthesis report for cpu
+Sun Jul 19 19:44:36 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |cpu|Multiplicador:multiplicador|Control:Control|estado_atual
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: instructionmemory:IntructionMemory
+ 16. Parameter Settings for User Entity Instance: registerfile:RegisterFile
+ 17. Parameter Settings for User Entity Instance: Multiplicador:multiplicador|Control:Control
+ 18. Parameter Settings for User Entity Instance: datamemory:DataMemory
+ 19. Port Connectivity Checks: "Register:CTRL3"
+ 20. Port Connectivity Checks: "Multiplicador:multiplicador|Control:Control"
+ 21. Port Connectivity Checks: "Multiplicador:multiplicador"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jul 19 19:44:35 2020       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; cpu                                         ;
+; Top-level Entity Name              ; cpu                                         ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 56,819                                      ;
+;     Total combinational functions  ; 23,670                                      ;
+;     Dedicated logic registers      ; 33,393                                      ;
+; Total registers                    ; 33393                                       ;
+; Total pins                         ; 79                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; cpu                ; cpu                ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.5%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++---------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                 ; Library ;
++---------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------+---------+
+; Multiplicador/Counter/Counter.v       ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Counter/Counter.v       ;         ;
+; Multiplicador/Control/Control.v       ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v       ;         ;
+; Multiplicador/Adder/Adder.v           ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Adder/Adder.v           ;         ;
+; Multiplicador/ACC/Acc.v               ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/ACC/Acc.v               ;         ;
+; ADDRDecoding/ADDRDecoding.v           ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/ADDRDecoding/ADDRDecoding.v           ;         ;
+; RegisterFile/registerfile.v           ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/RegisterFile/registerfile.v           ;         ;
+; Register/Register.v                   ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Register/Register.v                   ;         ;
+; PC/pc.v                               ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/PC/pc.v                               ;         ;
+; MUX/mux.v                             ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/MUX/mux.v                             ;         ;
+; Multiplicador/Multiplicador.v         ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Multiplicador.v         ;         ;
+; InstructionMemory/instructionmemory.v ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v ;         ;
+; Extend/extend.v                       ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Extend/extend.v                       ;         ;
+; DataMemory/datamemory.v               ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v               ;         ;
+; Control/control.v                     ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v                     ;         ;
+; ALU/alu.v                             ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/ALU/alu.v                             ;         ;
+; cpu.v                                 ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v                                 ;         ;
++---------------------------------------+-----------------+------------------------+------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 56,819      ;
+;                                             ;             ;
+; Total combinational functions               ; 23670       ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 22360       ;
+;     -- 3 input functions                    ; 727         ;
+;     -- <=2 input functions                  ; 583         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 23610       ;
+;     -- arithmetic mode                      ; 60          ;
+;                                             ;             ;
+; Total registers                             ; 33393       ;
+;     -- Dedicated logic registers            ; 33393       ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 79          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 33350       ;
+; Total fan-out                               ; 193321      ;
+; Average fan-out                             ; 3.38        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                              ; Entity Name       ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-------------------+--------------+
+; |cpu                                    ; 23670 (0)           ; 33393 (0)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 79   ; 0            ; 0          ; |cpu                                             ; cpu               ; work         ;
+;    |ADDRDecoding:ADDRDecode|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|ADDRDecoding:ADDRDecode                     ; ADDRDecoding      ; work         ;
+;    |Multiplicador:multiplicador|        ; 70 (0)              ; 43 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Multiplicador:multiplicador                 ; Multiplicador     ; work         ;
+;       |Acc:Acc|                         ; 36 (36)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Multiplicador:multiplicador|Acc:Acc         ; Acc               ; work         ;
+;       |Adder:Adder|                     ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Multiplicador:multiplicador|Adder:Adder     ; Adder             ; work         ;
+;       |Control:Control|                 ; 8 (8)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Multiplicador:multiplicador|Control:Control ; Control           ; work         ;
+;       |Counter:Counter|                 ; 10 (10)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Multiplicador:multiplicador|Counter:Counter ; Counter           ; work         ;
+;    |Register:CTRL1|                     ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Register:CTRL1                              ; Register          ; work         ;
+;    |Register:CTRL2|                     ; 0 (0)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Register:CTRL2                              ; Register          ; work         ;
+;    |Register:CTRL3|                     ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Register:CTRL3                              ; Register          ; work         ;
+;    |Register:IMM|                       ; 0 (0)               ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Register:IMM                                ; Register          ; work         ;
+;    |Register:regB|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Register:regB                               ; Register          ; work         ;
+;    |Register:regD2|                     ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Register:regD2                              ; Register          ; work         ;
+;    |Register:regD|                      ; 2 (2)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|Register:regD                               ; Register          ; work         ;
+;    |alu:ALU|                            ; 77 (77)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|alu:ALU                                     ; alu               ; work         ;
+;    |control:Control|                    ; 27 (27)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|control:Control                             ; control           ; work         ;
+;    |datamemory:DataMemory|              ; 22942 (22942)       ; 32800 (32800)             ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|datamemory:DataMemory                       ; datamemory        ; work         ;
+;    |instructionmemory:IntructionMemory| ; 39 (39)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|instructionmemory:IntructionMemory          ; instructionmemory ; work         ;
+;    |mux:MuxA|                           ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|mux:MuxA                                    ; mux               ; work         ;
+;    |mux:WriteBack|                      ; 64 (64)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|mux:WriteBack                               ; mux               ; work         ;
+;    |mux:muxM|                           ; 87 (87)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|mux:muxM                                    ; mux               ; work         ;
+;    |pc:ProgramCouter|                   ; 10 (10)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|pc:ProgramCouter                            ; pc                ; work         ;
+;    |registerfile:RegisterFile|          ; 338 (338)           ; 398 (398)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |cpu|registerfile:RegisterFile                   ; registerfile      ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |cpu|Multiplicador:multiplicador|Control:Control|estado_atual           ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name            ; estado_atual.S3 ; estado_atual.S2 ; estado_atual.S1 ; estado_atual.00 ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; estado_atual.00 ; 0               ; 0               ; 0               ; 0               ;
+; estado_atual.S1 ; 0               ; 0               ; 1               ; 1               ;
+; estado_atual.S2 ; 0               ; 1               ; 0               ; 1               ;
+; estado_atual.S3 ; 1               ; 0               ; 0               ; 1               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                             ;
++-----------------------------------------------------+--------------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                              ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------------------------+------------------------+
+; control:Control|wr                                  ; GND                                              ; yes                    ;
+; Multiplicador:multiplicador|Control:Control|Load    ; Multiplicador:multiplicador|Control:Control|Load ; yes                    ;
+; control:Control|ctrl_muxM                           ; control:Control|ctrl_muxM                        ; yes                    ;
+; control:Control|alu[0]                              ; control:Control|alu[0]                           ; yes                    ;
+; control:Control|alu[1]                              ; control:Control|alu[0]                           ; yes                    ;
+; control:Control|ctrl_muxA                           ; GND                                              ; yes                    ;
+; control:Control|ctrl_muxR                           ; GND                                              ; yes                    ;
+; control:Control|rd[0]                               ; control:Control|wr                               ; yes                    ;
+; control:Control|rd[1]                               ; control:Control|wr                               ; yes                    ;
+; control:Control|rd[2]                               ; control:Control|wr                               ; yes                    ;
+; control:Control|rd[3]                               ; control:Control|wr                               ; yes                    ;
+; Number of user-specified and inferred latches = 11  ;                                                  ;                        ;
++-----------------------------------------------------+--------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                ;
++------------------------------------------------------------+------------------------------------------------------+
+; Register name                                              ; Reason for Removal                                   ;
++------------------------------------------------------------+------------------------------------------------------+
+; Register:CTRL1|out[0]                                      ; Stuck at VCC due to stuck port data_in               ;
+; Register:CTRL2|out[0]                                      ; Stuck at VCC due to stuck port data_in               ;
+; datamemory:DataMemory|dataOut[0]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[1]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[2]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[3]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[4]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[5]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[6]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[7]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[8]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[9]~en                        ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[10]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[11]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[12]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[13]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[14]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[15]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[16]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[17]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[18]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[19]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[20]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[21]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[22]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[23]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[24]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[25]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[26]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[27]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[28]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[29]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[30]~en                       ; Lost fanout                                          ;
+; datamemory:DataMemory|dataOut[31]~en                       ; Lost fanout                                          ;
+; Register:IMM|out[16..31]                                   ; Merged with Register:IMM|out[15]                     ;
+; instructionmemory:IntructionMemory|q[15,19,29,31]          ; Stuck at GND due to stuck port data_in               ;
+; registerfile:RegisterFile|read_addrB[3]                    ; Stuck at GND due to stuck port data_in               ;
+; Register:IMM|out[15]                                       ; Stuck at GND due to stuck port data_in               ;
+; instructionmemory:IntructionMemory|q[21]                   ; Merged with instructionmemory:IntructionMemory|q[24] ;
+; instructionmemory:IntructionMemory|q[6,8,28]               ; Merged with instructionmemory:IntructionMemory|q[2]  ;
+; instructionmemory:IntructionMemory|q[10,14]                ; Merged with instructionmemory:IntructionMemory|q[3]  ;
+; instructionmemory:IntructionMemory|q[7,9]                  ; Merged with instructionmemory:IntructionMemory|q[5]  ;
+; instructionmemory:IntructionMemory|q[30]                   ; Merged with instructionmemory:IntructionMemory|q[13] ;
+; Register:IMM|out[6,8]                                      ; Merged with Register:IMM|out[2]                      ;
+; Register:IMM|out[10,14]                                    ; Merged with Register:IMM|out[3]                      ;
+; Register:IMM|out[7,9]                                      ; Merged with Register:IMM|out[5]                      ;
+; Multiplicador:multiplicador|Control:Control|estado_atual~2 ; Lost fanout                                          ;
+; Multiplicador:multiplicador|Control:Control|estado_atual~3 ; Lost fanout                                          ;
+; registerfile:RegisterFile|read_addrA[3]                    ; Merged with registerfile:RegisterFile|read_addrA[0]  ;
+; instructionmemory:IntructionMemory|q[26]                   ; Merged with instructionmemory:IntructionMemory|q[24] ;
+; registerfile:RegisterFile|memoria[12][0]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][0]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][0]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][0]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][1]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][1]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][1]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][1]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][2]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][2]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][2]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][2]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][3]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][3]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][3]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][3]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][4]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][4]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][4]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][4]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][5]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][5]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][5]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][5]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][6]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][6]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][6]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][6]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][7]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][7]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][7]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][7]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][8]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][8]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][8]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][8]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][9]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][9]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][9]                    ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][9]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][10]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][10]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][10]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][10]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][11]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][11]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][11]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][11]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][12]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][12]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][12]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][12]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][13]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][13]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][13]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][13]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][14]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][14]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][14]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][14]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][15]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][15]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][15]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][15]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][17]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][17]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][17]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][17]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][19]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][19]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][19]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][19]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][20]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][20]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][20]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][20]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][21]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][21]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][21]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][21]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][22]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][22]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][22]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][22]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][23]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][23]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][23]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][23]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][24]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][24]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][24]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][24]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][26]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][26]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][26]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][26]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][28]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][28]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][28]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][28]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][29]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][29]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][29]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][29]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][30]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][30]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][30]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][30]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][31]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][31]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][31]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][31]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][25]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][25]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][25]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][25]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[12][27]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[8][27]                   ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[14][27]                  ; Lost fanout                                          ;
+; registerfile:RegisterFile|memoria[10][27]                  ; Lost fanout                                          ;
+; Total Number of Removed Registers = 195                    ;                                                      ;
++------------------------------------------------------------+------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                ;
++------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name                            ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; instructionmemory:IntructionMemory|q[19] ; Stuck at GND              ; registerfile:RegisterFile|read_addrB[3], registerfile:RegisterFile|memoria[12][0],  ;
+;                                          ; due to stuck port data_in ; registerfile:RegisterFile|memoria[10][0], registerfile:RegisterFile|memoria[8][0],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][0], registerfile:RegisterFile|memoria[12][1], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][1], registerfile:RegisterFile|memoria[8][1],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][1], registerfile:RegisterFile|memoria[12][2], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][2], registerfile:RegisterFile|memoria[8][2],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][2], registerfile:RegisterFile|memoria[12][3], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][3], registerfile:RegisterFile|memoria[8][3],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][3], registerfile:RegisterFile|memoria[12][4], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][4], registerfile:RegisterFile|memoria[8][4],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][4], registerfile:RegisterFile|memoria[12][5], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][5], registerfile:RegisterFile|memoria[8][5],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][5], registerfile:RegisterFile|memoria[12][6], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][6], registerfile:RegisterFile|memoria[8][6],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][6], registerfile:RegisterFile|memoria[12][7], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][7], registerfile:RegisterFile|memoria[8][7],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][7], registerfile:RegisterFile|memoria[12][8], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][8], registerfile:RegisterFile|memoria[8][8],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][8], registerfile:RegisterFile|memoria[12][9], ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][9], registerfile:RegisterFile|memoria[8][9],  ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][9],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][10],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][10],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][10],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][10],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][11],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][11],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][11],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][11],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][12],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][12],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][12],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][12],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][13],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][13],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][13],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][13],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][14],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][14],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][14],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][14],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][15],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][15],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][15],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][15],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][17],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][17],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][17],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][17],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][19],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][19],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][19],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][19],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][20],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][20],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][20],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][20],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][21],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][21],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][21],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][21],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][22],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][22],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][22],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][22],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][23],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][23],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][23],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][23],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][24],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][24],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][24],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][24],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][26],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][26],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][26],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][26],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][28],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][28],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][28],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][28],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][29],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][29],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][29],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][29],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][30],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][30],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][30],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][30],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][31],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][31],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][31],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][31],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][25],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][25],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][25],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][25],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[12][27],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[8][27],                                           ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[14][27],                                          ;
+;                                          ;                           ; registerfile:RegisterFile|memoria[10][27]                                           ;
+; Register:CTRL1|out[0]                    ; Stuck at VCC              ; Register:CTRL2|out[0]                                                               ;
+;                                          ; due to stuck port data_in ;                                                                                     ;
+; instructionmemory:IntructionMemory|q[15] ; Stuck at GND              ; Register:IMM|out[15]                                                                ;
+;                                          ; due to stuck port data_in ;                                                                                     ;
++------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 33393 ;
+; Number of registers using Synchronous Clear  ; 6     ;
+; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Asynchronous Clear ; 402   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 33228 ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; registerfile:RegisterFile|memoria[15][3]  ; 1       ;
+; registerfile:RegisterFile|memoria[15][5]  ; 1       ;
+; registerfile:RegisterFile|memoria[15][6]  ; 1       ;
+; registerfile:RegisterFile|memoria[15][7]  ; 1       ;
+; registerfile:RegisterFile|memoria[15][8]  ; 1       ;
+; registerfile:RegisterFile|memoria[15][9]  ; 1       ;
+; registerfile:RegisterFile|memoria[15][12] ; 1       ;
+; registerfile:RegisterFile|memoria[15][13] ; 1       ;
+; registerfile:RegisterFile|memoria[15][14] ; 1       ;
+; Total number of inverted registers = 9    ;         ;
++-------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cpu|Multiplicador:multiplicador|Counter:Counter|rCount[0] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |cpu|Multiplicador:multiplicador|Acc:Acc|aux[6]            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |cpu|Register:regD|out[19]                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |cpu|Multiplicador:multiplicador|Acc:Acc|aux[24]           ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|mux:WriteBack|out[24]                                 ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |cpu|registerfile:RegisterFile|Mux40                       ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |cpu|registerfile:RegisterFile|Mux15                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instructionmemory:IntructionMemory ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                         ;
+; ADDR_WIDTH     ; 10    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registerfile:RegisterFile ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                ;
+; ADDR_WIDTH     ; 4     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Multiplicador:multiplicador|Control:Control ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; S0             ; 00    ; Unsigned Binary                                                 ;
+; S1             ; 01    ; Unsigned Binary                                                 ;
+; S2             ; 10    ; Unsigned Binary                                                 ;
+; S3             ; 11    ; Unsigned Binary                                                 ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datamemory:DataMemory ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                            ;
+; ADDR_WIDTH     ; 10    ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:CTRL3"                                                                            ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; out[31..20] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out[18..5]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out[0]      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplicador:multiplicador|Control:Control"                                                             ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; rst  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplicador:multiplicador"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Idle ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 79                          ;
+; cycloneiii_ff         ; 33393                       ;
+;     CLR               ; 10                          ;
+;     ENA               ; 32821                       ;
+;     ENA CLR           ; 392                         ;
+;     ENA SLD           ; 15                          ;
+;     SCLR              ; 6                           ;
+;     plain             ; 149                         ;
+; cycloneiii_lcell_comb ; 23671                       ;
+;     arith             ; 60                          ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 47                          ;
+;     normal            ; 23611                       ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 40                          ;
+;         2 data inputs ; 530                         ;
+;         3 data inputs ; 680                         ;
+;         4 data inputs ; 22360                       ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 7.60                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:18     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sun Jul 19 19:42:49 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu -c cpu
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicador/counter/counter.v
+    Info (12023): Found entity 1: Counter File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Counter/Counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicador/control/control.v
+    Info (12023): Found entity 1: Control File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicador/adder/adder.v
+    Info (12023): Found entity 1: Adder File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Adder/Adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicador/acc/acc.v
+    Info (12023): Found entity 1: Acc File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/ACC/Acc.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file addrdecoding/addrdecoding.v
+    Info (12023): Found entity 1: ADDRDecoding File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/ADDRDecoding/ADDRDecoding.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file registerfile/registerfile.v
+    Info (12023): Found entity 1: registerfile File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/RegisterFile/registerfile.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file register/register.v
+    Info (12023): Found entity 1: Register File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Register/Register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pc/pc.v
+    Info (12023): Found entity 1: pc File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/PC/pc.v Line: 1
+Warning (12090): Entity "mux" obtained from "MUX/mux.v" instead of from Quartus Prime megafunction library File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/MUX/mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux/mux.v
+    Info (12023): Found entity 1: mux File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/MUX/mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplicador/multiplicador.v
+    Info (12023): Found entity 1: Multiplicador File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Multiplicador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instructionmemory/instructionmemory.v
+    Info (12023): Found entity 1: instructionmemory File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extend/extend.v
+    Info (12023): Found entity 1: extend File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Extend/extend.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file datamemory/datamemory.v
+    Info (12023): Found entity 1: datamemory File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control/control.v
+    Info (12023): Found entity 1: control File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alu/alu.v
+    Info (12023): Found entity 1: alu File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/ALU/alu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pll.v
+    Info (12023): Found entity 1: PLL File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/PLL.v Line: 39
+Warning (10238): Verilog Module Declaration warning at cpu.v(10): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "cpu" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file cpu.v
+    Info (12023): Found entity 1: cpu File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb.v
+    Info (12023): Found entity 1: TB File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/TB.v Line: 3
+Warning (10236): Verilog HDL Implicit Net warning at cpu.v(38): created implicit net for "wSystemClk" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at cpu.v(39): created implicit net for "wMultiplierClk" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 39
+Info (12127): Elaborating entity "cpu" for the top level hierarchy
+Info (12128): Elaborating entity "pc" for hierarchy "pc:ProgramCouter" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 74
+Warning (10230): Verilog HDL assignment warning at pc.v(11): truncated value with size 32 to match size of target (10) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/PC/pc.v Line: 11
+Info (12128): Elaborating entity "instructionmemory" for hierarchy "instructionmemory:IntructionMemory" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 75
+Warning (10030): Net "memoria.data_a" at instructionmemory.v(9) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 9
+Warning (10030): Net "memoria.waddr_a" at instructionmemory.v(9) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 9
+Warning (10030): Net "memoria.we_a" at instructionmemory.v(9) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 9
+Info (12128): Elaborating entity "control" for hierarchy "control:Control" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 77
+Warning (10270): Verilog HDL Case Statement warning at control.v(19): incomplete case statement has no default case item File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at control.v(11): inferring latch(es) for variable "ctrl_muxM", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at control.v(11): inferring latch(es) for variable "alu", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at control.v(11): inferring latch(es) for variable "ctrl_muxA", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at control.v(11): inferring latch(es) for variable "ctrl_muxR", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at control.v(11): inferring latch(es) for variable "rd", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at control.v(11): inferring latch(es) for variable "wr", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at control.v(11): inferring latch(es) for variable "cs", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 11
+Info (10041): Inferred latch for "rd[0]" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "rd[1]" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "rd[2]" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "rd[3]" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "rd[4]" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "wr" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "cs" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "ctrl_muxM" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "ctrl_muxR" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "ctrl_muxA" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "alu[0]" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (10041): Inferred latch for "alu[1]" at control.v(57) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+Info (12128): Elaborating entity "registerfile" for hierarchy "registerfile:RegisterFile" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 78
+Warning (10240): Verilog HDL Always Construct warning at registerfile.v(22): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/RegisterFile/registerfile.v Line: 22
+Info (12128): Elaborating entity "extend" for hierarchy "extend:Extend" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 79
+Info (12128): Elaborating entity "Register" for hierarchy "Register:IMM" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 80
+Info (12128): Elaborating entity "mux" for hierarchy "mux:MuxA" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 83
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 84
+Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:multiplicador" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 85
+Info (12128): Elaborating entity "Control" for hierarchy "Multiplicador:multiplicador|Control:Control" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Multiplicador.v Line: 13
+Warning (10235): Verilog HDL Always Construct warning at Control.v(50): variable "estado_atual" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 50
+Warning (10235): Verilog HDL Always Construct warning at Control.v(52): variable "St" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 52
+Warning (10235): Verilog HDL Always Construct warning at Control.v(70): variable "M" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 70
+Warning (10240): Verilog HDL Always Construct warning at Control.v(48): inferring latch(es) for variable "Done", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at Control.v(48): inferring latch(es) for variable "Load", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 48
+Warning (10240): Verilog HDL Always Construct warning at Control.v(48): inferring latch(es) for variable "Idle", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 48
+Warning (10034): Output port "rst" at Control.v(6) has no driver File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 6
+Info (10041): Inferred latch for "Idle" at Control.v(48) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 48
+Info (10041): Inferred latch for "Load" at Control.v(48) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 48
+Info (10041): Inferred latch for "Done" at Control.v(48) File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Control/Control.v Line: 48
+Info (12128): Elaborating entity "Counter" for hierarchy "Multiplicador:multiplicador|Counter:Counter" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Multiplicador.v Line: 14
+Info (12128): Elaborating entity "Adder" for hierarchy "Multiplicador:multiplicador|Adder:Adder" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Multiplicador.v Line: 15
+Info (12128): Elaborating entity "Acc" for hierarchy "Multiplicador:multiplicador|Acc:Acc" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Multiplicador/Multiplicador.v Line: 16
+Info (12128): Elaborating entity "datamemory" for hierarchy "datamemory:DataMemory" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 91
+Info (12128): Elaborating entity "ADDRDecoding" for hierarchy "ADDRDecoding:ADDRDecode" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 95
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[0]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[1]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[2]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[3]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[4]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[5]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[6]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[7]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[8]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[9]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[10]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[11]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[12]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[13]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[14]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[15]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[16]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[17]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[18]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[19]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[20]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[21]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[22]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[23]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[24]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[25]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[26]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[27]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[28]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[29]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[30]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+    Warning (13049): Converted tri-state buffer "datamemory:DataMemory|dataOut[31]" feeding internal logic into a wire File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 21
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/db/cpu.ram0_datamemory_1d545f57.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/db/cpu.ram0_instructionmemory_56655cf4.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276013): RAM logic "datamemory:DataMemory|memoria" is uninferred because MIF is not supported for the selected family File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 10
+    Info (276013): RAM logic "instructionmemory:IntructionMemory|memoria" is uninferred because MIF is not supported for the selected family File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 9
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/db/cpu.ram0_instructionmemory_56655cf4.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/db/cpu.ram0_datamemory_1d545f57.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch control:Control|ctrl_muxM has unsafe behavior File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructionmemory:IntructionMemory|q[4] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal instructionmemory:IntructionMemory|q[2] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+Warning (13012): Latch control:Control|alu[0] has unsafe behavior File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructionmemory:IntructionMemory|q[0] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal instructionmemory:IntructionMemory|q[2] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+Warning (13012): Latch control:Control|alu[1] has unsafe behavior File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructionmemory:IntructionMemory|q[0] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal instructionmemory:IntructionMemory|q[2] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+Warning (13012): Latch control:Control|rd[0] has unsafe behavior File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructionmemory:IntructionMemory|q[2] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+Warning (13012): Latch control:Control|rd[1] has unsafe behavior File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructionmemory:IntructionMemory|q[2] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+Warning (13012): Latch control:Control|rd[2] has unsafe behavior File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructionmemory:IntructionMemory|q[13] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+Warning (13012): Latch control:Control|rd[3] has unsafe behavior File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/Control/control.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructionmemory:IntructionMemory|q[2] File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/InstructionMemory/instructionmemory.v Line: 50
+Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/RegisterFile/registerfile.v Line: 30
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "cs" is stuck at VCC File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 34
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 154 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/output_files/cpu.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 56980 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 56901 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Peak virtual memory: 5063 megabytes
+    Info: Processing ended: Sun Jul 19 19:44:36 2020
+    Info: Elapsed time: 00:01:47
+    Info: Total CPU time (on all processors): 00:02:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/output_files/cpu.map.smsg.
+
+

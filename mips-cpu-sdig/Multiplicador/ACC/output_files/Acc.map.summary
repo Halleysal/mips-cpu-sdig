@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Jul 18 19:45:04 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Acc
+Top-level Entity Name : Acc
+Family : MAX 10
+Total logic elements : 34
+    Total combinational functions : 34
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 68
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

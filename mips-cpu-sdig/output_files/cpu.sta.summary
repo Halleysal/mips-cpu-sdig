@@ -1,0 +1,173 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clock'
+Slack : -9.909
+TNS   : -232116.459
+
+Type  : Slow 1200mV 85C Model Setup 'clockM'
+Slack : -7.706
+TNS   : -226.376
+
+Type  : Slow 1200mV 85C Model Setup 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : -6.252
+TNS   : -6.252
+
+Type  : Slow 1200mV 85C Model Setup 'instructionmemory:IntructionMemory|q[13]'
+Slack : -5.339
+TNS   : -28.697
+
+Type  : Slow 1200mV 85C Model Hold 'clockM'
+Slack : 0.342
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clock'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.556
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : 4.797
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'instructionmemory:IntructionMemory|q[13]'
+Slack : -4.912
+TNS   : -13.495
+
+Type  : Slow 1200mV 85C Model Removal 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.374
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -46793.050
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clockM'
+Slack : -3.000
+TNS   : -63.329
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.326
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : 0.372
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock'
+Slack : -9.092
+TNS   : -212129.667
+
+Type  : Slow 1200mV 0C Model Setup 'clockM'
+Slack : -7.030
+TNS   : -206.037
+
+Type  : Slow 1200mV 0C Model Setup 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : -5.656
+TNS   : -5.656
+
+Type  : Slow 1200mV 0C Model Setup 'instructionmemory:IntructionMemory|q[13]'
+Slack : -5.133
+TNS   : -27.816
+
+Type  : Slow 1200mV 0C Model Hold 'clockM'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clock'
+Slack : 0.319
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.730
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : 4.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'instructionmemory:IntructionMemory|q[13]'
+Slack : -4.760
+TNS   : -12.960
+
+Type  : Slow 1200mV 0C Model Removal 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.351
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -46793.050
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clockM'
+Slack : -3.000
+TNS   : -63.329
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock'
+Slack : -4.135
+TNS   : -92559.270
+
+Type  : Fast 1200mV 0C Model Setup 'clockM'
+Slack : -2.981
+TNS   : -81.633
+
+Type  : Fast 1200mV 0C Model Setup 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : -2.389
+TNS   : -2.389
+
+Type  : Fast 1200mV 0C Model Setup 'instructionmemory:IntructionMemory|q[13]'
+Slack : -1.839
+TNS   : -8.754
+
+Type  : Fast 1200mV 0C Model Hold 'clock'
+Slack : 0.020
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.123
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clockM'
+Slack : 0.149
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : 2.295
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'instructionmemory:IntructionMemory|q[13]'
+Slack : -1.703
+TNS   : -4.577
+
+Type  : Fast 1200mV 0C Model Removal 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -34422.351
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clockM'
+Slack : -3.000
+TNS   : -47.208
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'instructionmemory:IntructionMemory|q[13]'
+Slack : 0.290
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Multiplicador:multiplicador|Control:Control|estado_atual.S2'
+Slack : 0.422
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Idle",
+					"strict" : false
+				},
+				{
+					"name" : "Done",
+					"strict" : false
+				},
+				{
+					"name" : "Load",
+					"strict" : false
+				},
+				{
+					"name" : "Sh",
+					"strict" : false
+				},
+				{
+					"name" : "Ad",
+					"strict" : false
+				},
+				{
+					"name" : "M",
+					"strict" : false
+				},
+				{
+					"name" : "St",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "K",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,281 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Idle",
+					"strict" : false
+				},
+				{
+					"name" : "Done",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[16]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[17]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[18]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[19]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[20]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[21]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[22]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[23]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[24]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[25]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[26]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[27]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[28]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[29]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[30]",
+					"strict" : false
+				},
+				{
+					"name" : "Produto[31]",
+					"strict" : false
+				},
+				{
+					"name" : "St",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicador[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Multiplicando[15]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,18 @@
+module alu(
+	input [31:0] a,
+	input [31:0] b,
+	input [1:0] sel,
+	output reg signed [31:0] out  );
+
+always @(a or b or sel)
+begin
+	case(sel)
+		2'b00: out <= a+b;	//soma
+		2'b01: out <= a-b;	//subtrai
+		2'b10: out <= a&b;	//AND
+		2'b11: out <= a|b;	//OR
+	endcase
+
+end
+
+endmodule

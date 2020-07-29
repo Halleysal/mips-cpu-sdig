@@ -1,0 +1,6 @@
+Warning (10268): Verilog HDL information at registerfile.v(22): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/RegisterFile/registerfile.v Line: 22
+Warning (10273): Verilog HDL warning at datamemory.v(26): extended using "x" or "z" File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/DataMemory/datamemory.v Line: 26
+Info (10281): Verilog HDL Declaration information at cpu.v(45): object "control" differs only in case from object "Control" in the same scope File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 45
+Info (10281): Verilog HDL Declaration information at cpu.v(46): object "ctrl1" differs only in case from object "CTRL1" in the same scope File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 46
+Info (10281): Verilog HDL Declaration information at cpu.v(47): object "ctrl2" differs only in case from object "CTRL2" in the same scope File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 47
+Info (10281): Verilog HDL Declaration information at cpu.v(48): object "ctrl3" differs only in case from object "CTRL3" in the same scope File: C:/intelFPGA_lite/18.1/ELTD15/MIPS_CPU/cpu.v Line: 48

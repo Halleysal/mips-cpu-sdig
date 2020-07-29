@@ -1,0 +1,18 @@
+|Counter
+Load => rCount.OUTPUTSELECT
+Load => rCount.OUTPUTSELECT
+Load => rCount.OUTPUTSELECT
+Load => rCount.OUTPUTSELECT
+Load => rCount.OUTPUTSELECT
+Load => rCount.OUTPUTSELECT
+Load => K.OUTPUTSELECT
+Clk => K~reg0.CLK
+Clk => rCount[0].CLK
+Clk => rCount[1].CLK
+Clk => rCount[2].CLK
+Clk => rCount[3].CLK
+Clk => rCount[4].CLK
+Clk => rCount[5].CLK
+K <= K~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

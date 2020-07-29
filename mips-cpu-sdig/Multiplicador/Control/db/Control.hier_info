@@ -1,0 +1,21 @@
+|Control
+Idle <= Idle$latch.DB_MAX_OUTPUT_PORT_TYPE
+Done <= Done$latch.DB_MAX_OUTPUT_PORT_TYPE
+St => Selector1.IN3
+St => Idle$latch.DATAIN
+St => Selector0.IN2
+St => Selector4.IN1
+Load <= Load$latch.DB_MAX_OUTPUT_PORT_TYPE
+Sh <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+Ad <= Ad.DB_MAX_OUTPUT_PORT_TYPE
+Clk => estado_atual~1.DATAIN
+K => estado_atual.DATAB
+K => Selector2.IN3
+K => estado_atual.DATAB
+K => Selector1.IN1
+M => Ad.DATAB
+M => Selector3.IN2
+M => estado_atual.OUTPUTSELECT
+M => estado_atual.OUTPUTSELECT
+
+
