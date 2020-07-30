@@ -9,26 +9,6 @@ module cpu(
 	cs,
 );
 
-//A) 4 pulsos de clock.
-//
-//B) A cada pulso de clock o programa interpreta 32 bits de instrução, ou seja, throughput de 32 bits.
-//
-//C) F do sistema sem multiplicador = 86.39 MHz 
-//   F do Multiplicador = 191.39 MHz
-//   MAX 10 : 10M50DAF484C7G
-
-//D) FMax = 91.67 MHz
-//	  MAX 10 : 10M50DAF484C7G
-//
-//E) Não, pois a intrução deve passar pro registradores para cada pulso de clock, instruçoes para espera devem ser utilizadas pra dar certo e a informção chegar ao register file.
-//
-//F) Não pois o multiplicador é ultilizado no infra-sistema e o clock deste é controlado dentro do macrosistema, sem haver desincronia.
-//
-//G) Não é eficiente porque o multiplicador demora varios ciclos de clock para entregar o resultado corretamente, sendo necessário um clock exclusivo para esta tarefa, bem maior que o clock do sistema todo.
-//
-//H) Uma ideia seria colocar a execução e a memoria no mesmo pipeline, para reduzir em um ciclo de clock a latencia do sistema, para o mesmo throughput.
-
-
 input clock, reset, clockM;
 input [31:0] Data_BUS_READ;
 //output systemClock, multiplierClocklockedPLL,
